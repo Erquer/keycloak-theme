@@ -16,13 +16,13 @@ export type KcContextExtension =
 // - You want to add support for extra pages that are not yey featured by default, see: https://docs.keycloakify.dev/contributing#adding-support-for-a-new-page
 export const { kcContext } = getKcContext<KcContextExtension>({
 	// Uncomment to test the login page for development.
-	//mockPageId: "login.ftl",
+	// mockPageId: "login.ftl",
 	mockData: [
 		{
 			pageId: "login.ftl",
 			locale: {
 				//When we test the login page we do it in french
-				currentLanguageTag: "fr",
+				currentLanguageTag: "en",
 			},
 			//Uncomment the following line for hiding the Alert message
 			//"message": undefined

@@ -51,7 +51,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     return (
         <div className={getClassName("kcLoginClass")}>
             <div id="kc-header" className={getClassName("kcHeaderClass")}>
-                <img id={'kc-all-for-one-logo'} src={'./assets/a41Logo.png'} alt={'ALLFOrONeLogo'}/>
+                <div id={'kc-all-for-one-logo'}></div>
                 <div id="kc-header-wrapper" className={getClassName("kcHeaderWrapperClass")}>
                     {msg("loginTitleHtml", realm.displayNameHtml)}
                 </div>
@@ -153,9 +153,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                 />
                             </div>
                         )}
-                        dupadupadupa
                         {children}
-                        duaduaiasda
                         {auth !== undefined && auth.showTryAnotherWayLink && showAnotherWayIfPresent && (
                             <form
                                 id="kc-select-try-another-way-form"
@@ -184,13 +182,6 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                     </div>
                                 </div>
                             </form>
-                        )}
-                        {displayInfo && (
-                            <div id="kc-info" className={getClassName("kcSignUpClass")}>
-                                <div id="kc-info-wrapper" className={getClassName("kcInfoAreaWrapperClass")}>
-                                    {infoNode}
-                                </div>
-                            </div>
                         )}
                     </div>
                 </div>

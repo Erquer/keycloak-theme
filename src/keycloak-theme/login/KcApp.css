@@ -17,5 +17,19 @@
 
 #kc-header {
 	display: flex;
+	height: 150px;
 	justify-content: space-between;
+}
+
+#kc-all-for-one-logo {
+	margin: 10px;
+	width: 100%;
+	background-image: url("./assets/a41Logo.png");
+	background-repeat: no-repeat;
+	background-size: 400px 100px;
+}
+
+#kc-header-wrapper {
+	padding: 0;
+	align-items: baseline;
 }
