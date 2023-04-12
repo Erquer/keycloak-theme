@@ -1,12 +1,7 @@
 {
-    "name": "keycloakify-starter",
-    "homepage": "https://starter.keycloakify.dev",
-    "version": "4.1.8",
-    "description": "A starter/demo project for keycloakify",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/codegouvfr/keycloakify-starter.git"
-    },
+    "name": "KC-THEME",
+    "version": "0.0.2",
+    "description": "POC",
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
@@ -15,22 +10,9 @@
         "download-builtin-keycloak-theme": "download-builtin-keycloak-theme"
     },
     "keycloakify": {
-        "extraThemeProperties": [ 
-            "foo=bar"
-        ],
-        "extraLoginPages": [
-            "my-extra-page-1.ftl",
-            "my-extra-page-2.ftl"
-        ],
-        "extraAccountPages": [
-            "my-extra-page-1.ftl",
-            "my-extra-page-2.ftl"
-        ],
-        "customUserAttributes": [
-            "your-custom-attribute"
-        ]
+        "artifactId": "all-for-one"
     },
-    "author": "u/garronej",
+    "author": "jankowiakb",
     "license": "MIT",
     "keywords": [],
     "dependencies": {
@@ -41,6 +23,7 @@
         "powerhooks": "^0.26.7",
         "react": "18.1.0",
         "react-dom": "18.1.0",
+        "styled-components": "^5.3.9",
         "tsafe": "^1.6.0"
     },
     "devDependencies": {

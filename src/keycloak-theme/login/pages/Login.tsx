@@ -82,7 +82,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                                 {msg(label)}
                                             </label>
                                             <input
-                                                tabIndex={1}
+                                                tabIndex={2}
                                                 id={autoCompleteHelper}
                                                 className={getClassName("kcInputClass")}
                                                 //NOTE: This is used by Google Chrome auto fill so we use it to tell
@@ -107,44 +107,13 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     {msg("password")}
                                 </label>
                                 <input
-                                    tabIndex={2}
+                                    tabIndex={3}
                                     id="password"
                                     className={getClassName("kcInputClass")}
                                     name="password"
                                     type="password"
                                     autoComplete="off"
                                 />
-                            </div>
-                            <div className={clsx(getClassName("kcFormGroupClass"), getClassName("kcFormSettingClass"))}>
-                                <div id="kc-form-options">
-                                    {realm.rememberMe && !usernameEditDisabled && (
-                                        <div className="checkbox">
-                                            <label>
-                                                <input
-                                                    tabIndex={3}
-                                                    id="rememberMe"
-                                                    name="rememberMe"
-                                                    type="checkbox"
-                                                    {...(login.rememberMe
-                                                        ? {
-                                                              "checked": true
-                                                          }
-                                                        : {})}
-                                                />
-                                                {msg("rememberMe")}
-                                            </label>
-                                        </div>
-                                    )}
-                                </div>
-                                <div className={getClassName("kcFormOptionsWrapperClass")}>
-                                    {realm.resetPasswordAllowed && (
-                                        <span>
-                                            <a tabIndex={5} href={url.loginResetCredentialsUrl}>
-                                                {msg("doForgotPassword")}
-                                            </a>
-                                        </span>
-                                    )}
-                                </div>
                             </div>
                             <div id="kc-form-buttons" className={getClassName("kcFormGroupClass")}>
                                 <input
@@ -158,7 +127,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                         : {})}
                                 />
                                 <input
-                                    tabIndex={4}
+                                    tabIndex={1}
                                     className={clsx(
                                         getClassName("kcButtonClass"),
                                         getClassName("kcButtonPrimaryClass"),
@@ -175,27 +144,6 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                         </form>
                     )}
                 </div>
-                {realm.password && social.providers !== undefined && (
-                    <div
-                        id="kc-social-providers"
-                        className={clsx(getClassName("kcFormSocialAccountContentClass"), getClassName("kcFormSocialAccountClass"))}
-                    >
-                        <ul
-                            className={clsx(
-                                getClassName("kcFormSocialAccountListClass"),
-                                social.providers.length > 4 && getClassName("kcFormSocialAccountDoubleListClass")
-                            )}
-                        >
-                            {social.providers.map(p => (
-                                <li key={p.providerId} className={getClassName("kcFormSocialAccountListLinkClass")}>
-                                    <a href={p.loginUrl} id={`zocial-${p.alias}`} className={clsx("zocial", p.providerId)}>
-                                        <span>{p.displayName}</span>
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
             </div>
         </Template>
     );

@@ -2,18 +2,17 @@ import "./App.css";
 import logo from "./logo.svg";
 import myimg from "./myimg.png";
 import { createOidcClientProvider, useOidcClient } from "./oidc";
-import { addFooToQueryParams, addBarToQueryParams } from "../keycloak-theme/login/valuesTransferredOverUrl";
 import jwt_decode from "jwt-decode";
 
 //On older Keycloak version you need the /auth (e.g: http://localhost:8080/auth)
 //On newer version you must remove it (e.g: http://localhost:8080 )
-const keycloakUrl = "https://auth.code.gouv.fr/auth";
-const keycloakRealm = "keycloakify";
+const keycloakUrl = "http://192.168.177.245/auth";
+const keycloakRealm = "ServicePortal";
 
 const { OidcClientProvider } = createOidcClientProvider({
     url: keycloakUrl,
     realm: keycloakRealm,
-    clientId: "starter",
+    clientId: "java_app",
     //This function will be called just before redirecting, 
     //it should return the current langue. 
     //kcContext.locale.currentLanguageTag will be what this function returned just before redirecting.  
@@ -22,8 +21,6 @@ const { OidcClientProvider } = createOidcClientProvider({
         [url]
             //Instead of foo and bar you could have isDark for example or any other state that you wish to 
             //transfer from the main app to the login pages.
-            .map(url => addFooToQueryParams({ url, value: { foo: 42 } }))
-            .map(url => addBarToQueryParams({ url, value: "value of bar transferred to login page" }))
         [0],
     log: console.log
 });
